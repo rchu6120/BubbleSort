@@ -1,14 +1,12 @@
 public class Runner {
     public static void main(String[] args) {
-        int[] randIntArr = new int[10000];
-        for (int i = 0; i < randIntArr.length; i++) {
-            randIntArr[i] = (int) (Math.random() * 10001);
-        }
-        SortingUtil.bubble(int[] randIntArr);
+        int[] list = SortingUtil.randIntArr(100);
         long time = System.nanoTime();
-        utils.bubbleSort(randIntArr);
+        SortingUtil.bubble(list);
+        for (int cur : list) {
+            System.out.println(cur);
+        }
         time = System.nanoTime() - time;
-
-        System.out.println("Time taken: " + time);
+        System.out.println("Time taken: " + time + " nanoseconds");
     }
 }

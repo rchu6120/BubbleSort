@@ -6,16 +6,24 @@ public class SortingUtil {
     }
 
     public static void bubble(int[] arr) {
-        int count = -1;
-        while (count != -1) {
-            count = 0;
+        int swaps = -1;
+        while (swaps != -1) {
+            swaps = 0;
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] > arr[i+1]) {
                     swap(arr, i , i+1);
-                    count++;
+                    swaps++;
                 }
             }
         }
+        System.out.println("It took you " + swaps + "times.");
     }
 
+    public static int[] randIntArr(int count) {
+        int[] randomArr = new int[count];
+        for (int i = 0; i < randomArr.length; i++)  {
+            randomArr[i] = (int) (Math.random() * 101);
+        }
+        return randomArr;
+    }
 }
