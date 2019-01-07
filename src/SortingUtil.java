@@ -21,10 +21,35 @@ public class SortingUtil {
 
     public static int[] randIntArr(int count) {
         int[] randomArr = new int[count];
-        for (int i = 0; i < randomArr.length; i++)  {
+        for (int i = 0; i < randomArr.length; i++) {
             randomArr[i] = (int) (Math.random() * 10001);
         }
         return randomArr;
     }
 
+    public static boolean isSorted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean checkSum(int[] before, int[] after) {
+        int sum1 = 0;
+        int sum2 = 0;
+        if (before.length != after.length) {
+            return false;
+        } else {
+            for (int i = 0; i < before.length; i++) {
+                sum1 += before[i];
+                sum2 += after[i];
+            }
+            if (sum1 != sum2) {
+                return false;
+            }
+            return true;
+        }
+    }
 }
