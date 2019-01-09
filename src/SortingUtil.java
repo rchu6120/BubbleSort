@@ -53,4 +53,18 @@ public class SortingUtil {
         }
     }
 
+    public static void selectionSort(int[] arr) {
+        int minPos = 0;
+        for (int curPos = 0; curPos < arr.length-1; curPos++) {
+            int minVal = arr[curPos];
+            minPos = curPos;
+            for (int i = curPos + 1; i < arr.length-1; i++) {
+                if (arr[i] < minVal) {
+                    minVal = arr[i];
+                }
+            }
+            swap(arr, curPos, minPos);
+        }
+    }
+
 }

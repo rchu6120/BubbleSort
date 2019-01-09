@@ -9,7 +9,7 @@ public class Runner {
             System.out.println();
         }
         long time = System.nanoTime();
-        SortingUtil.bubbleSort(testArr);
+        SortingUtil.bubbleSort(finalArr);
         time = System.nanoTime() - time;
         System.out.print("After: ");
         System.out.println();
@@ -27,7 +27,7 @@ public class Runner {
             System.out.println("All of your numbers are correctly sorted but something went wrong in your sorting method that there are different numbers within your previous array and the array after the sorting method!");
         }
         else {
-            System.out.println("All of your numbers are correctly sorted and contain all the same numbers within the previous array and the array after the sorting method!");
+            System.out.println("All of your numbers are correctly sorted and contain all of the same numbers within the previous array and the array after the sorting method!");
         }
         System.out.println("Time taken: " + time + " nanoseconds");
     }
