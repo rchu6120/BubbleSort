@@ -19,6 +19,20 @@ public class SortingUtil {
         }
     }
 
+    public static void selectionSort(int[] arr) {
+        int minPos = 0;
+        for (int curPos = 0; curPos < arr.length-1; curPos++) {
+            int minVal = arr[curPos];
+            minPos = curPos;
+            for (int i = curPos + 1; i < arr.length-1; i++) {
+                if (arr[i] < minVal) {
+                    minVal = arr[i];
+                }
+            }
+            swap(arr, curPos, minPos);
+        }
+    }
+
     public static int[] randIntArr(int count) {
         int[] randomArr = new int[count];
         for (int i = 0; i < randomArr.length; i++) {
@@ -50,20 +64,6 @@ public class SortingUtil {
                 return false;
             }
             return true;
-        }
-    }
-
-    public static void selectionSort(int[] arr) {
-        int minPos = 0;
-        for (int curPos = 0; curPos < arr.length-1; curPos++) {
-            int minVal = arr[curPos];
-            minPos = curPos;
-            for (int i = curPos + 1; i < arr.length-1; i++) {
-                if (arr[i] < minVal) {
-                    minVal = arr[i];
-                }
-            }
-            swap(arr, curPos, minPos);
         }
     }
 
